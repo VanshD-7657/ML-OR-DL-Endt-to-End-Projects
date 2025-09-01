@@ -1,0 +1,4 @@
+2025-08-26 23:37:01,660 - INFO - Data Ingestion method starts
+2025-08-26 23:37:01,702 - INFO - Dataset read as pandas dataframe
+2025-08-26 23:37:01,740 - INFO - Raw data is saved
+2025-08-26 23:37:01,818 - INFO - Ingestion of the data is completed

@@ -1,0 +1,7 @@
+2025-08-29 01:13:03,888 - WARNING -  * Debugger is active!
+2025-08-29 01:13:03,893 - INFO -  * Debugger PIN: 112-648-051
+2025-08-29 01:13:06,899 - INFO - 127.0.0.1 - - [29/Aug/2025 01:13:06] "POST /predict HTTP/1.1" 200 -
+2025-08-29 01:13:38,641 - INFO - 127.0.0.1 - - [29/Aug/2025 01:13:38] "POST /predict HTTP/1.1" 200 -
+2025-08-29 01:17:44,520 - INFO - 127.0.0.1 - - [29/Aug/2025 01:17:44] "POST /predict HTTP/1.1" 200 -
+2025-08-29 01:18:22,810 - INFO - 127.0.0.1 - - [29/Aug/2025 01:18:22] "POST /predict HTTP/1.1" 200 -
+2025-08-29 01:21:10,985 - INFO -  * Detected change in 'C:\\Users\\AMAN\\Downloads\\DATA Scientist\\MLProjectsDeplPractice\\app.py', reloading

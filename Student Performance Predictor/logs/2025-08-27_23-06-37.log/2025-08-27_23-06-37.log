@@ -1,0 +1,13 @@
+2025-08-27 23:06:42,893 - INFO - Data Ingestion method starts
+2025-08-27 23:06:42,945 - INFO - Dataset read as pandas dataframe
+2025-08-27 23:06:42,979 - INFO - Raw data is saved
+2025-08-27 23:06:43,041 - INFO - Ingestion of the data is completed
+2025-08-27 23:06:43,098 - INFO - Read train and test data completed
+2025-08-27 23:06:43,098 - INFO - Obtaining preprocessing object
+2025-08-27 23:06:43,098 - INFO - Numerical columns standard scaling completed
+2025-08-27 23:06:43,098 - INFO - Categorical columns encoding completed
+2025-08-27 23:06:43,105 - INFO - Applying preprocessing object on training and testing dataframes
+2025-08-27 23:06:43,161 - INFO - Saved preprocessing object
+2025-08-27 23:06:43,167 - INFO - Splitting Training and Test Input Data
+2025-08-27 23:07:00,159 - INFO - Best model found on both training and testing dataset
+2025-08-27 23:07:00,160 - INFO - Trained model saved
