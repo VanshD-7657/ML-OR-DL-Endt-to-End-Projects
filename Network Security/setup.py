@@ -21,6 +21,7 @@ def get_requirements() -> List[str]:
 
     return requirements_list
 
+<<<<<<< HEAD
 setup(
     name='NetworkSecurity',
     version='0.0.1',
@@ -29,3 +30,6 @@ setup(
     packages=find_packages(),
     install_requires=get_requirements()
 )
+=======
+print(get_requirements())
+>>>>>>> 2b125f583551d34c3094328643607076bb294362
