@@ -5,5 +5,7 @@ matplotlib
 seaborn
 python-dotenv
 flask
+pymongo
+certifi
 
--e . 
+#-e . 
