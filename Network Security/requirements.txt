@@ -5,12 +5,7 @@ matplotlib
 seaborn
 python-dotenv
 flask
-<<<<<<< HEAD
 pymongo
-certifi
+pymongo[srv]==3.12
 
 #-e . 
-=======
-
--e . 
->>>>>>> 2b125f583551d34c3094328643607076bb294362
