@@ -1,10 +1,11 @@
 # 🎓 Student Performance Predictor
 
-This project is an End-to-End Machine Learning application designed to predict student performance based on various factors such as study habits, attendance, parental involvement, and exam scores.
+### This project is an End-to-End Machine Learning application designed to predict student performance based on various factors such as study habits, attendance, parental involvement, and exam scores.
 
-The goal is to showcase how to build a production-ready ML project — from data collection, preprocessing, and model training to deployment.
+### The goal is to showcase how to build a production-ready ML project — from data collection, preprocessing, and model training to deployment.
 
 ## 📂 Project Structure
+```
 Student Performance Predictor/
 │
 ├── artifacts/             # Stores artifacts like preprocessor, train & test data
@@ -25,16 +26,15 @@ Student Performance Predictor/
 ├── app.py                 # Main app runner
 ├── application.py         # Flask application entry point
 └── Readme.md              # Documentation
-
+```
 ## 🔑 Features
-
-✔️ Data ingestion and preprocessing pipeline
-✔️ Train-test split with saved artifacts
-✔️ Feature engineering & transformation (saved as preprocessor.pkl)
-✔️ Machine Learning model training (CatBoost / other models)
-✔️ Logging for better monitoring & debugging
-✔️ Flask web app for real-time prediction
-✔️ Deployment-ready project structure
+✔️ Data ingestion and preprocessing pipeline  
+✔️ Train-test split with saved artifacts  
+✔️ Feature engineering & transformation (saved as preprocessor.pkl)  
+✔️ Machine Learning model training (CatBoost / other models)  
+✔️ Logging for better monitoring & debugging  
+✔️ Flask web app for real-time prediction  
+✔️ Deployment-ready project structure  
 
 ## 🛠️ Tech Stack
 Languages: Python (3.9+)
@@ -44,19 +44,13 @@ Backend: Flask
 Other Tools: Logging, Pickle
 
 ## ⚙️ How It Works
-
-Data Collection → Collects student data (train.csv, test.csv).
-
-Preprocessing → Cleans, scales, and encodes data (preprocessor.pkl).
-
-Model Training → Trains ML model to predict student performance.
-
-Model Deployment → Flask app with HTML UI for user interaction.
-
+Data Collection → Collects student data (train.csv, test.csv).  
+Preprocessing → Cleans, scales, and encodes data (preprocessor.pkl).  
+Model Training → Trains ML model to predict student performance.  
+Model Deployment → Flask app with HTML UI for user interaction.  
 Prediction → User inputs student details → Model predicts performance.
 
 ## 🚀 Getting Started
-
 #### 1️⃣ Clone the Repository
 git clone https://github.com/<your-username>/Student-Performance-Predictor.git
 cd Student-Performance-Predictor
@@ -69,14 +63,13 @@ conda activate student_performance
 pip install -r requirements.txt
 
 #### 4️⃣ Run Application
-python application.py
-
-The app will run on http://127.0.0.1:5000/
+python application.py  
+### The app will run on http://127.0.0.1:5000/
 
 ## 📊 Example Use Case
 
-A teacher enters student details (attendance, study time, past scores, etc.)
-The model predicts whether the student’s performance will be High / Medium / Low
+A teacher enters student details (attendance, study time, past scores, etc.)  
+The model predicts whether the student’s performance will be High / Medium / Low  
 Helps in early intervention for weak students
 
 ## 📈 Future Improvements
