@@ -18,17 +18,17 @@ columns:
   - Submitting_to_email: int64
   - Abnormal_URL: int64
   - Redirect: int64
-  - on_mouseoveint64r: int64
+  - on_mouseover: int64
   - RightClick: int64
-  - popUpWidnowint64: int64
+  - popUpWidnow: int64
   - Iframe: int64
-  - ge_of_domaiint64n: int64
+  - age_of_domain: int64
   - DNSRecord: int64
-  - web_trafficint64: int64
+  - web_traffic: int64
   - Page_Rank: int64
   - Google_Index: int64
   - Links_pointing_to_page: int64
-  - Sint64tatisticalint64_report: int64
+  - Statistical_report: int64
   - Result: int64
  
 
@@ -52,16 +52,16 @@ numerical_columns:
   - Submitting_to_email
   - Abnormal_URL
   - Redirect
-  - on_mouseoveint64r
+  - on_mouseover
   - RightClick
-  - popUpWidnowint64
+  - popUpWidnow
   - Iframe
-  - ge_of_domaiint64n
+  - age_of_domain
   - DNSRecord
-  - web_trafficint64
+  - web_traffic
   - Page_Rank
   - Google_Index
   - Links_pointing_to_page
-  - Sint64tatisticalint64_report
+  - Statistical_report
   - Result
  
