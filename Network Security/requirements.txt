@@ -9,5 +9,5 @@ pymongo
 pymongo[srv]==3.12
 certifi
 pyyaml
-dill
+
 #-e . 
