@@ -9,13 +9,10 @@ from networksecurity.utils.main_utils.utils import save_object,load_object,load_
 from networksecurity.utils.ml_utils.metric.classification_metric import get_classification_score
 import os,sys
 
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import r2_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import AdaBoostClassifier,GradientBoostingClassifier,RandomForestClassifier
-
-
 
 
 class ModelTrainer:
@@ -27,36 +24,37 @@ class ModelTrainer:
         except Exception as e:
             raise NetworkSecurityException(e, sys)
 
+    
+
     def train_model(self, x_train, y_train, x_test, y_test):
         models = {
             "Random Forest": RandomForestClassifier(verbose=1),
             "Decision Tree": DecisionTreeClassifier(),
             "Gradient Boosting": GradientBoostingClassifier(verbose=1),
-            "Logistic Regression": LogisticRegression(verbose=1),
             "AdaBoost": AdaBoostClassifier(),
         }
 
         params = {
             "Decision Tree": {
-                'criterian': ['gini','entropy','log_loss'],
+                'criterion': ['gini','entropy','log_loss'],
+                # 'max_depth': [None,10,20]
                 # 'splitter': ['best','random'],
                 # 'max_features': ['sqrt','log2'],
             },
             "Random Forest": {
                 'n_estimators': [8,16,32,64,128]
                 # 'max_features': ['sqrt','log2'],
-                # 'criterian': ['gini','entropy','log_loss'],
+                # 'criterion': ['gini','entropy','log_loss'],
             },
             "Gradient Boosting": {
                 'learning_rate': [.1,.01,.05],
                 'subsample': [0.6,0.7,0.8,0.9],
                 'n_estimators': [8,16,32,64,128,256],
                 # 'loss': ['log_loss','exponential'],
-                # 'criterian': ['squared_ error','friedman_mse'],
+                # 'criterion': ['squared_ error','friedman_mse'],
                 # 'max_features': ['auto','sqrt','log2']
             },
-            "Logistic Regression": {},
-            "Ada Boost": {
+            "AdaBoost": {
                 'learning_rate': [.1,.01,0.5,.001],
                 'n_estimators': [8,16,32,64,128]
             }
@@ -67,20 +65,19 @@ class ModelTrainer:
                                              models=models,params=params)
         
         # To get best model score from dict
-        best_model_score = max(sorted(model_report.values()))
+        best_model_name, best_model_info = max(model_report.items(), 
+        key=lambda item: float(item[1].get("test_score", float("-inf")))
+        )
 
-        # To get best model name for dict
-        best_model_name = list(model_report.keys())[
-            list(model_report.values()).index(best_model_score)
-        ]
-
+        best_model_score = float(best_model_info.get("test_score", float("-inf")))
         best_model = models[best_model_name]
+
+        logging.info(f"Selected best model: {best_model_name}, test_score={best_model_score}")
 
         y_train_pred = best_model.predict(x_train)
         classification_train_metric = get_classification_score(y_true=y_train,y_pred=y_train_pred)
 
-        ## Track the mlflow
-
+        # Track the experiments with mlflow for Train metric
 
         y_test_pred = best_model.predict(x_test)
         classification_test_metric = get_classification_score(y_true=y_test,y_pred=y_test_pred)
@@ -91,8 +88,11 @@ class ModelTrainer:
         os.makedirs(model_dir_path,exist_ok=True)
 
         Network_Model = NetworkModel(preprocessor=preprocessor, model=best_model)
-        # Dout
+        # Saving the object
         save_object(self.model_trainer_config.trained_model_file_path,obj=Network_Model)
+        logging.info("Saving the model.pkl file in Final_model")
+        save_object("final_model/model.pkl",best_model)
+
 
         # Model Trainer Artifact
         model_trainer_artifact = ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,

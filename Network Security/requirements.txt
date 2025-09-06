@@ -9,5 +9,9 @@ pymongo
 pymongo[srv]==3.12
 certifi
 pyyaml
-
+mlflow
+fastapi
+uvicorn
+dnspython
+python-multipart
 #-e . 

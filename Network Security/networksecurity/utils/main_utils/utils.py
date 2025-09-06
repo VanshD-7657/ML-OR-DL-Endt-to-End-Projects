@@ -95,11 +95,14 @@ def evaluate_models(x_train,y_train,x_test,y_test,models,params):
 
             train_model_score = r2_score(y_train,y_train_pred)
             test_model_score = r2_score(y_test,y_test_pred)
+             
+            report[list(models.keys())[i]] = {
+                "train_score": train_model_score,
+                "test_score": test_model_score,
+                "best_params": gs.best_params_
+            }
 
-            report[list(models.keys())[i]] = test_model_score
-            return report
-
-
+        return report
 
     except Exception as e:
         raise NetworkSecurityException(e,sys)
